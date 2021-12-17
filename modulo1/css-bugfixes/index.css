@@ -51,7 +51,11 @@ div img {
 }
 
 .botao-amarelo:hover {
-    background-color: #c44f00;
+    background-color: #ecc203;
+}
+
+.botao-amarelo:active{
+    color: white;
 }
 
 .container {
@@ -119,6 +123,15 @@ td button {
     color: black;
 }
 
+td button:hover {
+    background-color: #d3da97;
+    cursor:pointer
+}
+
+td button:active {
+    color: white;
+}
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
@@ -136,5 +149,12 @@ td button {
 }
 
 #back-button:hover {
-    background-color: #635a3d
+    background-color: #d3da97;
+    cursor: pointer;
 }
+#back-button:active {
+
+    color: white;
+}
+
+
