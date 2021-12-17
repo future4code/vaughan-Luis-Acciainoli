@@ -34,7 +34,11 @@ div>p:first-child {
 }
 
 div img {
-    
+    width:100px;
+}
+.icone{
+    height:15px;
+    width:15px;
 }
 
 .botao-amarelo {
