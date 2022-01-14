@@ -9,7 +9,7 @@ const MainContainer = styled.div`
   align-items: center;
 `;
 
-const Input = styled.input`
+const InputNovo = styled.input`
   display: flex;
   padding: 14px
   border-radius: 5px;
@@ -79,19 +79,19 @@ class App extends React.Component {
         {listarPosts}
 
         <div>
-          <Input
+          <InputNovo
             value={this.state.InputUser}
             onChange={this.onChangeInputUser}
             placeholder={"Usuário"}
           />
 
-          <Input
+          <InputNovo
             value={this.state.InputFoto}
             onChange={this.onChangeInputFoto}
             placeholder={"Foto Perfil"}
           />
 
-          <Input
+          <InputNovo
             value={this.state.InputFotoPost}
             onChange={this.onChangeInputFotoPost}
             placeholder={"Valor do post"}
