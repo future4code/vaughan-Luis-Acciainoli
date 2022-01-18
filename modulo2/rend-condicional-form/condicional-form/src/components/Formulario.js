@@ -9,7 +9,6 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import DadosGerais from './DadosGerais';
@@ -20,7 +19,7 @@ import InfosEnsino from './InfosEnsino';
 
 const passoss = ['Dados Gerais', 'Informações do Ensino Superior', 'Informações Gerais do Ensino'];
 
-function getpassosContent(passos) {
+function pegaPassoAtual(passos) {
   switch (passos) {
     case 0:
       return <DadosGerais />;
@@ -29,9 +28,11 @@ function getpassosContent(passos) {
     case 2:
       return <InfosEnsino />;
     default:
-      throw new Error('Erro ao concluir');
+      throw new Error('Acesso Incorreto');
   }
 }
+
+
 
 
 const temalabenu = createTheme({
@@ -86,7 +87,7 @@ export default function Formulario() {
       >
           
         <Toolbar>
-          <Typography variant="h6" color="primary.contrasText" noWrap>
+          <Typography variant="h3" color="secondary.contrasText" noWrap>
             Labenu
           </Typography>
         </Toolbar>
@@ -114,13 +115,17 @@ export default function Formulario() {
             {passoAtivo === passoss.length ? (
 
               <React.Fragment>
-                <h1>Funcinou</h1>
-
+                 <Typography variant="h4">
+                 O FORMULÁRIO ACABOU!
+                </Typography>
+                <Typography variant="subtitle1">
+                Muito obrigado por participar! Entraremos em contato!
+                </Typography>
               </React.Fragment>
             ) : 
             (
               <React.Fragment>
-                {getpassosContent(passoAtivo)}
+                {pegaPassoAtual(passoAtivo)}
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                   {passoAtivo !== 0 && (
                     <Button onClick={tratarAnterior} sx={{ mt: 3, ml: 1 }}>
@@ -135,12 +140,16 @@ export default function Formulario() {
                   >
 
                     {passoAtivo === passoss.length - 1 ? 'Submeter' : 'Proximo'}
-                    
+
                   </Button>
 
                   
                 </Box>
               </React.Fragment>
+
+
+
+
             )}
           </React.Fragment>
         </Paper>

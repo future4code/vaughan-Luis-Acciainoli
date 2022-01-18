@@ -2,8 +2,7 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import MenuItem from '@mui/material/MenuItem';
 
 
 const escolaridades = [
@@ -26,7 +25,7 @@ const escolaridades = [
   ];
 
 
-export default function AddressForm() {
+export default function DadosGerais() {
 
   const [escolaridade, setEscolaridade] = React.useState('1');
 
@@ -53,7 +52,7 @@ export default function AddressForm() {
           />
         </Grid>
 
-        <Grid item xs={12} sm={5}>
+        <Grid item xs={12} sm={6}>
           <TextField
             required
             id="idade"
@@ -65,7 +64,7 @@ export default function AddressForm() {
           />
         </Grid>
 
-        <Grid item xs={12}>
+        <Grid item xs={12} sm={6}>
           <TextField
             required
             id="email"
@@ -84,7 +83,7 @@ export default function AddressForm() {
         <Grid item xs={12} >
         
           <TextField
-            required
+            
             id="outlined-select-currency"
             select
             label="Escolha"
@@ -94,11 +93,12 @@ export default function AddressForm() {
           >
 
 
-              {escolaridades.map((escolha) => (
-                <option key={escolha.id} value={escolha.id}>
-                  {escolha.tipo}
-                </option>
-              ))}
+            {escolaridades.map((opcao) => (
+            <MenuItem key={opcao.id} value={opcao.id}>
+              {opcao.tipo}
+            </MenuItem>
+          ))}
+          
 
             </TextField>
         </Grid>
