@@ -78,7 +78,7 @@ class App extends React.Component {
     state = {
       tarefas: [{
         id: Date.now(), // Explicação abaixo
-        texto: '',
+        texto: '1',
         completa: false // Indica se a tarefa está completa (true ou false)
       }],
       inputValue: '',
@@ -89,28 +89,61 @@ class App extends React.Component {
     
     
   componentDidUpdate() {
-
+    const tarefas = JSON.stringify(this.state.tarefas);
+    localStorage.setItem("tarefas", tarefas);
   };
 
   componentDidMount() {
-
+    const tarefas = JSON.parse(localStorage.getItem("tarefas"));
+    if (tarefas) {
+      this.setState({
+        tarefas: tarefas,
+      });
+    }
   };
 
   onChangeInput = (event) => {
+    this.setState({
+      inputValue: event.target.value,
+    });
 
-  }
+  };
 
   criaTarefa = () => {
+    const novaTarefa = {
+      id: Date.now(),
+      texto: this.state.inputValue,
+      completa: false,
+  };
 
-  }
+  this.setState({
+    tarefas: [...this.state.tarefas, novaTarefa],
+    inputValue: "",
+  });
+};
 
   selectTarefa = (id) => {
+    const tarefas = this.state.tarefas.map((tarefa) => {
+      if (tarefa.id === id) {
+        tarefa.completa = !tarefa.completa;
+      }
 
-  }
+      return tarefa;
+    });
+
+    this.setState({
+      tarefas,
+    });
+  };
+
 
   onChangeFilter = (event) => {
 
-  }
+    this.setState({
+      filtro: event.target.value,
+    });
+  };
+
 
   render() {
     const listaFiltrada = this.state.tarefas.filter(tarefa => {
