@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #d2dbcc;
+  font-family: 'Segoe UI', Helvetica Neue, Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+.appJanela{
+  display:flex;
+  height: 100vh;
+  background-color: #EDEDED;
+}
+
+.sidebar{
+  width: 40%;
+  max-width: 415px; /* igual do whatsapp */
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #ddd ;
+}
+
+header{
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+header h1{
+  font-size: 1.5rem;
+  color: #455159;
+  text-transform: uppercase;
+}
+.avatarTopo{
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.botoes-topo{
+  display: flex;
+  padding: 0 15px;
+}
+
+.btn-topo{
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.buscar{
+ background-color:  #F2A057;
+ border-bottom: 1px slid #ddd;
+ padding: 5px 15px;
+
+}
+
+.buscar-input{
+  background-color: #fff;
+  height: 40px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.buscar-input input{
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  margin-left: 5px;
+}
+
+.conteudo{
+
+}
+
+
+
