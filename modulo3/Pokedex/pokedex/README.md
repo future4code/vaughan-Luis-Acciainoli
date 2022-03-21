@@ -9,28 +9,36 @@ Este projeto consiste em criar uma pokedex em ReactJS consumindo uma [API](pokea
 ## 🔨 Tecnologias:
 
 - [ReactJs][reactjs]
-- [Axios][axios]
-- [MaterialUI][materialUI]
-- [PokemonTypeSVGIcons](https://github.com/duiker101/pokemon-type-svg-icons)
+- [Fetch()][fectchAPI]
+
 
 
 ## 🎨 Layout
 
 ## 🔓 Funcionalidades
 
+[x] Buscar Pokemon
+[x] Carregamento na busca
+[x] Sistema de paginação
+[x] Consulta a API publica
 
+## 🚧 Em desenvolvimento
 
+[ ] Layout Responsivo
+[ ] BackgroundColor pela cor do pokemon
+[ ] Batalha de pokemons
+[ ] Página dedicada aos pokemons adicionados
+[ ] Página 404 
 ## 🌟 Demo
 
 Acesso a demonstração do projeto rodando.
-[Link](https://.surge.sh/)
+[Link](https://pokedexlabenu.surge.sh/)
 
 
 ## 🚀 Como rodar este projeto
 
 Para clonar e executar este aplicativo, você precisará de [Git](https://git-scm.com), [NodeJs][nodejs] Instalado em seu computador.
 
-## 🖌️ Telas
 
 ### 🌀 Clonando o repositório
 
