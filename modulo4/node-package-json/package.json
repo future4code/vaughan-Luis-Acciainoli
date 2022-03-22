@@ -1,0 +1,11 @@
+{
+  "name": "aula-node01",
+  "version": "1.0.0",
+  "description": "Iniciando backand com node",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "author": "Pedro Acciainoli",
+  "license": ""
+}
