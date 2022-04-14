@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .card {
+      border-width: 1px;
+      border-style: solid;
+      border-color: #E0E0E0;
+      border-radius: 3px;
+      padding: 16px;
+      max-width: 512px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .title {
+      color: #202124;
+      width: 100%;
+    }
+    ul {
+      color: #202124;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="title">
+      <h2> O e-mail {{process.env.NODEMAILER_USER}} registrou uma nova chamada</h2>
+    </div>
+  
+    <strong>Detalhes do retorno</strong>
+    <ul>
+      <li> <strong>Cep: </strong> {{address.zipcode}}</li>
+      <li> <strong>Logadouro: </strong>  {{address.street}}</li>
+      <li> <strong>Numero: </strong>  {{address.number}}</li>
+      <li> <strong>Complemento: </strong> {{address.complement}}</li>
+      <li> <strong>Bairro: </strong> {{address.distric}}</li>
+      <li> <strong>Cidade: </strong> {{address.city}}</li>
+      <li> <strong>Estado: </strong> {{address.state}}</li>
+    </ul>
+    <br> <br>
+    <div style="color: #757575; margin-left: auto;  margin-right: auto; text-align: center;">
+      <small>⚡ Email generado automáticamente, por favor não responder ⚡</small> <br>
+      <small>Labenu  - 2022 </small>
+    </div>
+  </div>
+</body>
+</html>
