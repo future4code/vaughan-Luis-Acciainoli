@@ -27,24 +27,25 @@
   </style>
 </head>
 <body>
-  <div class="card">
+  <class="card">
+     <a href="https://labenu.com.br"> <img src="https://uploads-ssl.webflow.com/5e790d30d198385b09366d8f/5eb17dfd4a07be86d2b8951e_Labenu_principal_slogan.png"></a>
     <div class="title">
       <h2> O e-mail {{process.env.NODEMAILER_USER}} registrou uma nova chamada</h2>
     </div>
   
-    <strong>Detalhes do retorno</strong>
+    <strong>Detalhes do endereço</strong>
     <ul>
-      <li> <strong>Cep: </strong> {{address.zipcode}}</li>
-      <li> <strong>Logadouro: </strong>  {{address.street}}</li>
-      <li> <strong>Numero: </strong>  {{address.number}}</li>
-      <li> <strong>Complemento: </strong> {{address.complement}}</li>
-      <li> <strong>Bairro: </strong> {{address.distric}}</li>
-      <li> <strong>Cidade: </strong> {{address.city}}</li>
-      <li> <strong>Estado: </strong> {{address.state}}</li>
+      <li> <strong>Cep:  </strong> {{zipcode}}  </li>
+      <li> <strong>Logadouro: </strong> {{street}}</li>
+      <li> <strong>Numero: </strong>  {{number}}</li>
+      <li> <strong>Complemento: </strong> {{complement}}</li>
+      <li> <strong>Bairro: </strong> {{distric}}</li>
+      <li> <strong>Cidade: </strong> {{city}}</li>
+      <li> <strong>Estado: </strong> {{state}}</li>
     </ul>
     <br> <br>
     <div style="color: #757575; margin-left: auto;  margin-right: auto; text-align: center;">
-      <small>⚡ Email generado automáticamente, por favor não responder ⚡</small> <br>
+      <small>⚡ Email gerado automáticamente, por favor não responder. Pedro Acciainoli ⚡</small> <br>
       <small>Labenu  - 2022 </small>
     </div>
   </div>

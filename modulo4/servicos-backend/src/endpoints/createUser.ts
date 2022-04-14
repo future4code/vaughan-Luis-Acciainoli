@@ -13,11 +13,11 @@ import {v4 as uuidv4} from 'uuid';
 const hbsConfig = {
    viewEngine: {
      extName: '.hbs',
-     partialsDir: path.join(__dirname, '../views/'),
-     layoutsDir: path.join(__dirname, '../views/'),
+     partialsDir: path.join(__dirname, '../view/'),
+     layoutsDir: path.join(__dirname, '../view/'),
      defaultLayout: ''
    },
-   viewPath: path.join(__dirname, '../views/'),
+   viewPath: path.join(__dirname, '../view/'),
    extName: '.hbs'
  };
  
@@ -32,7 +32,6 @@ export default async function createUser(
       const { zipcode, number, complement} = req.body
       
       const address = await getAddressInfo(zipcode, number, complement)
-      console.log(address)
 
       if (!zipcode || !number || !complement) {
          res.statusCode = 422
@@ -43,9 +42,6 @@ export default async function createUser(
          throw new Error ("Não foi possivel localizar este endereço")
       }
        
-
-      
-
     
       let id = uuidv4();
       
@@ -55,6 +51,8 @@ export default async function createUser(
       }
       
       await connection('servico_backend').insert(insertId)
+
+
 
 
       transporter.use('compile', hbs(handlebarsOptions));
@@ -67,8 +65,24 @@ export default async function createUser(
          o "from" que indica o e-mail que enviou a mensagem, 
          </p>`
      }) */
-
-     res.status(200).send({ info, message: "Usuario Criado!" })
+     console.log(address);
+     const email = {
+      from: `<${process.env.NODEMAILER_USER}>`,
+      to: "g6e8k2i3m1o7e5d9@labenualunos.slack.com",
+      subject: "Cadastro na plataforma API",
+      template: 'index',
+      context: {
+         zipcode: address.zipcode,
+         number: address.number,
+         complement: address.complement,
+         distric: address.distric,
+         city: address.city,
+         state: address.state,
+         street: address.street,
+      }
+    };
+    await transporter.sendMail(email)
+     res.status(200).send({ email, message: "Usuario Criado!" })
 
    } catch (error:any) {
 
