@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .card {
+      border-width: 1px;
+      border-style: solid;
+      border-color: #E0E0E0;
+      border-radius: 3px;
+      padding: 16px;
+      max-width: 512px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .title {
+      color: #202124;
+      width: 100%;
+    }
+    ul {
+      color: #202124;
+    }
+  </style>
+</head>
+<body>
+  <class="card">
+     <a href="https://labenu.com.br"> <img src="https://uploads-ssl.webflow.com/5e790d30d198385b09366d8f/5eb17dfd4a07be86d2b8951e_Labenu_principal_slogan.png"></a>
+    <div class="title">
+      <h2> O e-mail {{process.env.NODEMAILER_USER}} registrou uma nova chamada</h2>
+    </div>
+  
+    <strong>Detalhes do endereço</strong>
+    <ul>
+      <li> <strong>Cep:  </strong> {{zipcode}}  </li>
+      <li> <strong>Logadouro: </strong> {{street}}</li>
+      <li> <strong>Numero: </strong>  {{number}}</li>
+      <li> <strong>Complemento: </strong> {{complement}}</li>
+      <li> <strong>Bairro: </strong> {{distric}}</li>
+      <li> <strong>Cidade: </strong> {{city}}</li>
+      <li> <strong>Estado: </strong> {{state}}</li>
+    </ul>
+    <br> <br>
+    <div style="color: #757575; margin-left: auto;  margin-right: auto; text-align: center;">
+      <small>⚡ Email gerado automáticamente, por favor não responder. Pedro Acciainoli ⚡</small> <br>
+      <small>Labenu  - 2022 </small>
+    </div>
+  </div>
+</body>
+</html>
